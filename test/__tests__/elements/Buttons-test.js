@@ -2,21 +2,21 @@
 import ReactDOM  from 'react-dom';
 import React     from 'react';
 import TestUtils from 'react-addons-test-utils';
-import {Sidebar} from '../../../src/index';
+import {Buttons}   from '../../../src/index';
 
-describe('Sidebar', () => {
-  it('should have .ui.sidebar class by default', () => {
+describe('Buttons', () => {
+  it('should have .ui.buttons class by default', () => {
     let instance = TestUtils.renderIntoDocument(
-      <Sidebar></Sidebar>
+      <Buttons></Buttons>
     );
 
     expect(ReactDOM.findDOMNode(instance).className).toMatch('ui');
-    expect(ReactDOM.findDOMNode(instance).className).toMatch('sidebar');
+    expect(ReactDOM.findDOMNode(instance).className).toMatch('buttons');
   });
 
   it('should have child by default', () => {
     let instance = TestUtils.renderIntoDocument(
-      <Sidebar>123</Sidebar>
+      <Buttons>123</Buttons>
     );
 
     expect(ReactDOM.findDOMNode(instance).textContent).toEqual('123');
@@ -24,17 +24,17 @@ describe('Sidebar', () => {
 
   it('should have custom class with custom className', () => {
     let instance = TestUtils.renderIntoDocument(
-      <Sidebar className="custom"></Sidebar>
+      <Buttons className="custom"></Buttons>
     );
 
     expect(ReactDOM.findDOMNode(instance).className).toMatch('custom');
   });
 
-  it('should display Sidebar name', () => {
+  it('should display Buttons name', () => {
     let Component = (
-      <Sidebar></Sidebar>
+      <Buttons></Buttons>
     );
 
-    expect(Component.type.displayName).toMatch('Sidebar');
+    expect(Component.type.displayName).toMatch('Buttons');
   });
 });
